@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal portfolio</title>
+    <link href="{% static 'comments/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>DISCUSSION</h1>
+    <nav>
+        <a href="{% url 'comments:home' %}"><button>Home</button></a>
+        <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
+        <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
+        <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
+    </nav>
+    <form method="POST" title="type your comment in the box!"
+        style="margin-top: 25px; margin-left: 20px; width: 400px; padding-bottom: 25px; border-radius: 16px"
+        class="comment_button">
+        {%csrf_token%}
+        <h3 style="margin: 5px;">
+            Add a comment: <br>
+        </h3>
+        <input size="50" placeholder="Enter your name here" name="name" style="margin-bottom: 5px;">
+        <input size="50" height="500px" name="comment" placeholder="Enter your comment here">
+        <br>
+        <input type="submit"
+            style="border-radius: 16px; padding: 10px; font-size: 16px; margin-top: 5px; margin-left: 350px;"
+            class="submit_button" value="Add comment">
+        </button>
+    </form>
+    <br>
+
+    <table style="margin-top: 20px; color:aliceblue">
+        <tr>
+            <h2 style="color: aliceblue;">
+                USER COMMENTS:
+            </h2>
+        </tr>
+    </table>
+    <p id="comments_paragraph"
+        style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px; ">
+        {% for comment in comments %}
+        {{comment.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{comment.created_at}}
+        <br>{{comment.comment}}<br>
+        {%endfor%}
+    </p>
+</body>
+
+</html>

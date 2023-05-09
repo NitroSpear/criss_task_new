@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal portfolio</title>
+    <link href="{% static 'comments/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>HOME PAGE</h1>
+    <nav>
+        <a href="{% url 'comments:home' %}"><button>Home</button></a>
+        <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
+        <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
+        <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
+    </nav>
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <h2
+                            style="margin-top: 30px; margin-left: 50px; background-color: rgb(228, 244, 235); padding: 10px;border-radius: 10px; margin-bottom: 10px; width: 200px; font-weight: 400; font-size: 30;">
+                            INTRODUCTION
+                        </h2>
+                    </tr>
+                    <tr>
+                        <p
+                            style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px;">
+                            Hi my name is Vedant Sindhwani, a computer science student at Birla Institute of Technology and Science (BITS) Pilani,
+                       
+                            one of India's top private engineering colleges. I was born and brought up in the bustling city of Delhi, 
+                   
+                            which is renowned for its rich culture, history, and heritage. With a passion for technology and a keen 
+                   
+                            interest in exploring new areas of computer science, I have joined as a student at BITS Pilani.
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <img src="{% static 'comments/profile_pic.jpg' %}" alt="Me in agra"
+                    style="width: 400px;height: 400px;margin-left: 60px;margin-right: 60px;margin-top: 60px; border-radius: 50%;">
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <p style="font-weight: 400; font-size: 30; margin-left: 50px; color:rgb(228, 244, 235)">connect with me
+                    at:</p>
+            </td>
+            <td>
+                <a href="https://twitter.com/sindhwanivedant" class="fa fa-twitter"></a>
+            </td>
+            <td>
+                <a href="https://www.instagram.com/vedant_sindhwani/" class="fa fa-instagram"></a>
+            </td>
+            <td>
+                <a href="https://www.facebook.com/vedant.sindhwani.1" class="fa fa-facebook"></a>
+            </td>
+            <td>
+                <a href="https://www.linkedin.com/in/vedant-sindhwani-93720b145/" class="fa fa-linkedin"></a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

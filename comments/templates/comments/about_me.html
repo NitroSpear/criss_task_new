@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal portfolio</title>
+    <link href="{% static 'comments/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>ABOUT ME</h1>
+    <nav>
+        <a href="{% url 'comments:home' %}"><button>Home</button></a>
+        <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
+        <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
+        <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
+    </nav>
+    <p
+        style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px;">
+        As a child, I always had a fascination with computers and the technology that powers them. Growing up in Delhi, 
+
+        I was exposed to the fast-paced lifestyle and the ever-evolving technology landscape of the city.
+    
+        I spent countless hours tinkering with computers, exploring the depths of the internet, and experimenting with programming languages.
+     
+        As I progressed through my academic journey, my love for computer science only grew stronger. 
+        I was determined to pursue a career in this field and
+      
+        eventually secured admission to BITS Pilani, 
+        which has been a dream come true for me.
+    </p>
+    <p
+        style="margin-top: 25px; margin-left: 500px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px;">
+        Apart from computers, I also enjoy learnign about economics and finance. 
+      
+        In addition to my interest in finance and computer science, I have an enthusiasm for mythology. 
+     
+        I love reading books and watching documentaries on mythologies from around the world. 
+  
+        I find the stories and characters fascinating, and enjoys learning about the different cultural beliefs and traditions.
+   
+        Swimming and tennis are two of my favorite sports.
+        I find swimming to be a great way to unwind and de-stress after a long day.
+   
+        It also helps me stay physically fit and healthy. 
+        Tennis, on the other hand, is a sport that I used to play quite passionately for a long time,
+        though now my interest in it has dwindled over time.
+    </p>
+
+</body>
+
+</html>

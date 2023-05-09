@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Personal portfolio</title>
+    <link href="{% static 'comments/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>CONTACT ME</h1>
+    <nav>
+        <a href="{% url 'comments:home' %}"><button>Home</button></a>
+        <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
+        <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
+        <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
+    </nav>
+    <p
+        style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px; width: 500px; border-radius: 10px;">
+        My contact information:<br>
+        Name: Vedant Sindhwani<br>
+        Phone no: 9958439673<br>
+        Email: vedant.sindhwani@gmail.com<br>
+        Institute email: f20220055@pilani.bits-pilani.ac.in<br>
+        Current address: Room number 2140, Gandhi Bhavan
+    </p>
+    <h3>
+        Want me to contact you? Let me know your contact details!
+    </h3>
+    <center>
+        <table
+            style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px; width: 500px; border-radius: 10px; font-family: 'Courier New', Courier, monospace;">
+            <tr>
+                <td>
+                    Enter your name:
+                </td>
+                <td>
+                    <input id="name_input">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter your phone number:
+                </td>
+                <td>
+                    <input id="number_input">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter your email address:
+                </td>
+                <td>
+                    <input id="email_input">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter your address:
+                </td>
+                <td>
+                    <input id="address_input">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter your message:
+                </td>
+                <td>
+                    <input id="message">
+                </td>
+            </tr>
+        </table>
+        <button style="border-radius: 16px; padding: 10px; font-size: 16px; margin-top: 12px;" class="submit_button"
+            onclick="collectinfo()">
+            Submit details
+        </button>
+    </center>
+    <script>
+        function collectinfo() {
+            var name = document.getElementById("name_input").value;
+            var number = document.getElementById("number_input").value;
+            var email = document.getElementById("email_input").value;
+            var address = document.getElementById("address_input").value;
+
+        }
+    </script>
+</body>
+
+</html>
