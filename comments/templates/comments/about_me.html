@@ -11,42 +11,80 @@
 <body>
     <h1>ABOUT ME</h1>
     <nav>
-        <a href="{% url 'comments:home' %}"><button>Home</button></a>
-        <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
-        <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
-        <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
-    </nav>
-    <p
-        style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px;">
-        As a child, I always had a fascination with computers and the technology that powers them. Growing up in Delhi, 
+      <a href="{% url 'comments:home' %}"><button>Home</button></a>
+      <a href="{% url 'comments:about-me'%}"><button>About me</button></a>
+      <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
+      <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
+  </nav>
 
-        I was exposed to the fast-paced lifestyle and the ever-evolving technology landscape of the city.
-    
-        I spent countless hours tinkering with computers, exploring the depths of the internet, and experimenting with programming languages.
-     
-        As I progressed through my academic journey, my love for computer science only grew stronger. 
-        I was determined to pursue a career in this field and
-      
-        eventually secured admission to BITS Pilani, 
-        which has been a dream come true for me.
-    </p>
-    <p
-        style="margin-top: 25px; margin-left: 500px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px;">
-        Apart from computers, I also enjoy learnign about economics and finance. 
-      
-        In addition to my interest in finance and computer science, I have an enthusiasm for mythology. 
-     
-        I love reading books and watching documentaries on mythologies from around the world. 
+  <table>
+    <tr>
+      <td>
+        <div class="w3-content" style="width:800px;margin-top:46px; height: 300px; margin-top: -200px;">
+          <div class="mySlides w3-display-container w3-center">
+            <img src="{% static 'comments/St.Fr.Ch_Sanjay_vedant1.JPG' %}" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Roadtrip</h3>
+              <center>
+              <p style="color: aliceblue;">Me with my dad on a roadtrip</p>    
+              </center>
+            </div>
+          </div>
+          <div class="mySlides w3-display-container w3-center">
+            <img src="{% static 'comments/vedant_2.jpg' %}" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Jaipur</h3>
+              <center>
+              <p style="color: aliceblue;">My sister, me, dad, and my grandparents in Jaipur</p>      
+              </center> 
+            </div>
+          </div>
+          <div class="mySlides w3-display-container w3-center">
+            <img src="{% static 'comments/St.FrChurch_Isha_vedant_sangeeta3.JPG' %}" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Red fort</h3>
+              <center>
+              <p style="color: aliceblue;">Me posing in style at the red fort</p>      
+              </center> 
+            </div>
+          </div>
+
+      </td>
+      <td>
+        <p style="color: aliceblue; margin-top: 75px; margin-left: 20px; margin-right: 20px;">My name is Vedant Sindhwani, and I am currently a student at BITS Pilani College, hailing from the vibrant city of Delhi.<br>Pursuing my passion for technology, I am studying Computer Science, constantly immersing myself in the ever-evolving world of coding, algorithms, and software development.<br>
+
+          From an early age, I discovered my affinity for tinkering and experimenting with various technologies, always curious to understand how things work.<br> This innate curiosity has fueled my love for learning, as I am constantly seeking new knowledge and expanding my skillset. The thrill of discovering and mastering new concepts is what drives me to push the boundaries of my understanding.<br>
+          
+          When I'm not engrossed in technology, you'll likely find me on the tennis court or swimming in the pool. Sports have always been an essential part of my life, offering a much-needed balance to the mental challenges of computer science. The focus, discipline, and camaraderie found in these activities complement my academic pursuits, allowing me to stay grounded and refreshed.
+          
+          <br>One aspect that sets me apart is my passion for solving problems through creativity and ingenuity. I relish the opportunity to tackle complex challenges and find innovative solutions. Whether it's creating an efficient algorithm, designing a user-friendly interface, or devising a clever workaround, I thrive on the satisfaction of turning ideas into reality.
+          
+          <br>Beyond my academic and technological pursuits, my heart lies with my family. I am fortunate to live with my sister, parents, and grandparents, who have always been a source of love, support, and inspiration in my life. Their unwavering encouragement and belief in my abilities have shaped me into the person I am today.
+          
+          In conclusion, I am a curious and enthusiastic student at BITS Pilani College, passionate about computer science, technology, and the power of creativity. With a love for learning, a knack for problem-solving, and a strong bond with my family, I am ready to embrace new opportunities, contribute to the world of technology, and make a positive impact wherever I go.</p>
+      </td>
+    </tr>
+  </table>
+
   
-        I find the stories and characters fascinating, and enjoys learning about the different cultural beliefs and traditions.
-   
-        Swimming and tennis are two of my favorite sports.
-        I find swimming to be a great way to unwind and de-stress after a long day.
-   
-        It also helps me stay physically fit and healthy. 
-        Tennis, on the other hand, is a sport that I used to play quite passionately for a long time,
-        though now my interest in it has dwindled over time.
-    </p>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 4000);    
+        }
+        </script>
+        
 
 </body>
 

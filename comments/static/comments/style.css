@@ -15,6 +15,9 @@ h1 {
 nav {
   margin: 0 auto;
   text-align: center;
+  border: 2px;
+  opacity: 100%;
+  border-color: rgb(18, 136, 109);
   background-color: rgb(18, 136, 109);
   padding: 0px;
   margin-top: 10px;

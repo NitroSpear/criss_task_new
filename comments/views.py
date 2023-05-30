@@ -3,6 +3,7 @@ from .forms import AddComment
 from .models import Comment
 
 
+
 # Create your views here.
 def home(request):
     return render(request, "comments/index.html")

@@ -16,6 +16,7 @@
         <a href="{% url 'comments:contact-me'%}"><button>Contact me</button></a>
         <a href="{% url 'comments:comments'%}"><button>Discussion</button></a>
     </nav>
+    <center>
     <form method="POST" title="type your comment in the box!"
         style="margin-top: 25px; margin-left: 20px; width: 400px; padding-bottom: 25px; border-radius: 16px"
         class="comment_button">
@@ -31,6 +32,7 @@
             class="submit_button" value="Add comment">
         </button>
     </form>
+    </center>
     <br>
 
     <table style="margin-top: 20px; color:aliceblue">
@@ -40,13 +42,25 @@
             </h2>
         </tr>
     </table>
-    <p id="comments_paragraph"
+        
+    {% for comment in comments %}
+        <table id="comments_paragraph"
         style="margin-top: 25px; margin-left: 15px; background-color: rgb(228, 244, 235);padding: 10px;width: 1000px; border-radius: 10px; ">
-        {% for comment in comments %}
-        {{comment.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{comment.created_at}}
-        <br>{{comment.comment}}<br>
+            
+            <tr>
+                <td>
+                    {{comment.name}}
+                </td>
+                <td style="text-align: right;">
+                    {{comment.created_at}}<br>
+                </td>
+            </tr>
+            <tr>
+                <td>{{comment.comment}}</td>
+                
+            </tr>
+        </table>
         {%endfor%}
-    </p>
 </body>
 
 </html>
